@@ -107,5 +107,3 @@ else
     puts 'menor'
 end
 v = 'ok'
-
-

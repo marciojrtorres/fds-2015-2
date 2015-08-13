@@ -1,0 +1,9 @@
+http://dojopuzzles.com/problemas/exibe/nomes-de-autores-de-obras-bibliograficas/
+http://dojopuzzles.com/problemas/exibe/analisando-urls/
+http://dojopuzzles.com/problemas/exibe/batalha-naval/
+http://dojopuzzles.com/problemas/exibe/ano-bissexto/
+http://dojopuzzles.com/problemas/exibe/palavras-primas/
+http://dojopuzzles.com/problemas/exibe/calculando-estatisticas-simples/
+http://dojopuzzles.com/problemas/exibe/encontre-o-telefone/
+http://dojopuzzles.com/problemas/exibe/jokenpo/
+http://dojopuzzles.com/problemas/exibe/numeros-romanos/
