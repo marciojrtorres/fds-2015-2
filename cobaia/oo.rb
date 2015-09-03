@@ -1,7 +1,3 @@
-# OO em Ruby
-# puts 1.class
-# puts ''.class
-# p Time.new
 
 class Aluno
   # variáveis da instância
