@@ -1,0 +1,27 @@
+<h1>Listing compromissos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th>Quando</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compromissos.each do |compromisso| %>
+      <tr>
+        <td><%= compromisso.descricao %></td>
+        <td><%= compromisso.quando %></td>
+        <td><%= link_to 'Show', compromisso %></td>
+        <td><%= link_to 'Edit', edit_compromisso_path(compromisso) %></td>
+        <td><%= link_to 'Destroy', compromisso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Compromisso', new_compromisso_path %>

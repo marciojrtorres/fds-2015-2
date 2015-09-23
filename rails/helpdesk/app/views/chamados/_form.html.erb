@@ -1,0 +1,21 @@
+<%= form_for(@chamado) do |f| %>
+  <% if @chamado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chamado.errors.count, "error") %> prohibited this chamado from being saved:</h2>
+
+      <ul>
+      <% @chamado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Descrição' %><br>
+    <%= f.text_area :descricao, rows:10, cols:100 %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Salvar chamado'%>
+  </div>
+<% end %>

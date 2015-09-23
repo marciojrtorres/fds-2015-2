@@ -1,0 +1,25 @@
+<%= form_for(@pedido) do |f| %>
+  <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+      Um ou mais erros foram encontrados:
+      <% @pedido.errors.each do |attr, msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Descrição' %><br>
+    <%= f.text_area :descricao,
+        placeholder: 'Descrição do Pedido',
+        cols: 60, rows: 10  %>
+  </div>
+  <div class="field">
+    <%= f.label 'Prioridade' %><br>
+    <%= f.select :prioridade, Pedido::Prioridades %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit 'Fazer pedido' %>
+  </div>
+<% end %>
