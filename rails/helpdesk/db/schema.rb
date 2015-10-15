@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20150923225117) do
 
   create_table "chamados", force: true do |t|
     t.text     "descricao"
+    t.integer  "prioridade", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

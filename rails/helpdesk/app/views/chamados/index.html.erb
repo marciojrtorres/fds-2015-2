@@ -3,7 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>Descrição do Chamado</th>
+      <th>Descrição</th>
+      <th>Prioridade</th>
+      <th>Data/Hora</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -11,7 +13,15 @@
   <tbody>
     <% @chamados.each do |chamado| %>
       <tr>
-        <td><%= chamado.descricao %></td>
+        <td>
+          <%= chamado.descricao %>
+        </td>
+        <td>
+          <%= prioridade_text chamado.prioridade %>
+        </td>
+        <td>
+          <%= chamado.data_hora %>
+        </td>
         <td><%= link_to 'Abrir', chamado %></td>
         <td><%= link_to 'Editar', edit_chamado_path(chamado) %></td>
         <td><%= link_to 'Excluir', chamado, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>

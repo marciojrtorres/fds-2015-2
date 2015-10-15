@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :news
+
   resources :pedidos, except: :destroy
   put 'pedidos/:id/cancela' => "pedidos#cancela", as: :cancela_pedido
 

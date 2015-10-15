@@ -1,0 +1,33 @@
+<%= form_for(@evento) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <%= f.text_field :titulo, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label for="titulo">Resumo</label>
+    <%= f.text_area :resumo, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label for="imagem">Imagem</label>
+    <%= f.file_field :imagem,
+        accept: ['image/jpeg', 'image/png'] %>
+  </div>
+
+
+
+  <%= f.submit 'Salvar evento', class: ['btn', 'btn-default']%>
+<% end %>
