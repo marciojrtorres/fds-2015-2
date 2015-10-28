@@ -4,6 +4,7 @@ class CompromissosController < ApplicationController
   # GET /compromissos
   # GET /compromissos.json
   def index
+    #p current_usuario if usuario_signed_in?
     @compromissos = Compromisso.all
   end
 

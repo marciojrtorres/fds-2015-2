@@ -1,4 +1,5 @@
 class Evento < ActiveRecord::Base
+  belongs_to :usuario
   # 1280 x 720 (16:9)
   # 1280 x 1280
   has_attached_file :imagem,
