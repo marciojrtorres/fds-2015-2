@@ -1,10 +1,13 @@
 class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!,
+    # only: [:new, :edit, :create, :update, :destroy]
+    except: [:index, :show]
 
   # GET /eventos
   # GET /eventos.json
   def index
-    @eventos = Evento.all
+    @eventos = Evento.all.order('id DESC').paginate(:page => params[:page])
   end
 
   # GET /eventos/1
@@ -25,7 +28,7 @@ class EventosController < ApplicationController
   # POST /eventos.json
   def create
     @evento = Evento.new(evento_params)
-
+    @evento.usuario = current_usuario
     respond_to do |format|
       if @evento.save
         format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
@@ -69,6 +72,6 @@ class EventosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params[:evento].permit(:titulo, :resumo, :imagem)
+      params[:evento].permit(:titulo, :resumo, :imagem, :local)
     end
 end

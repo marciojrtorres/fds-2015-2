@@ -22,6 +22,17 @@
   </div>
 
   <div class="form-group">
+    <label for="local">Local</label>
+    <%= f.text_field :local, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label for="data">Data</label>
+    <%= f.date_field :data, class: 'form-control' %>
+  </div>
+
+
+  <div class="form-group">
     <label for="imagem">Imagem</label>
     <%= f.file_field :imagem,
         accept: ['image/jpeg', 'image/png'] %>

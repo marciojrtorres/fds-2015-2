@@ -1,4 +1,6 @@
 class Evento < ActiveRecord::Base
+  self.per_page = 2
+
   belongs_to :usuario
   # 1280 x 720 (16:9)
   # 1280 x 1280
